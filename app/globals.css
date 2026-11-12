@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #c9a24b;
+  --gold-light: #e6c87a;
+  --ink: #0b0a08;
+  --coal: #14110d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: #f5efe3;
+  font-family: "Jost", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold);
+  color: #0b0a08;
+}
+
+/* ---------- type helpers ---------- */
+.eyebrow {
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.gold-rule {
+  width: 56px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+}
+
+.gold-frame {
+  border: 1px solid rgba(201, 162, 75, 0.35);
+}
+
+.card-hover {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 162, 75, 0.8);
+}
+
+.img-zoom {
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .img-zoom {
+  transform: scale(1.06);
+}
+
+/* ---------- buttons ---------- */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #d9b45c, #c9a24b 55%, #a8823a);
+  color: #0b0a08;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  padding: 0.95rem 1.9rem;
+  border-radius: 999px;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  box-shadow: 0 8px 30px rgba(201, 162, 75, 0.25);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 14px 40px rgba(201, 162, 75, 0.35);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(201, 162, 75, 0.6);
+  color: var(--gold-light);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  padding: 0.95rem 1.9rem;
+  border-radius: 999px;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.btn-ghost:hover {
+  background: rgba(201, 162, 75, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ---------- hero video ---------- */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 10, 8, 0.62) 0%, rgba(11, 10, 8, 0.35) 45%, rgba(11, 10, 8, 0.92) 100%);
+}
+
+/* ---------- floating WhatsApp ---------- */
+.float-wa {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 60;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+.float-wa:hover {
+  transform: scale(1.08);
+}
+
+/* ---------- sample strip ---------- */
+.sample-strip {
+  background: #1d1710;
+  color: #d8c08a;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.25);
+}
+
+/* ---------- form ---------- */
+.field {
+  width: 100%;
+  background: #171310;
+  border: 1px solid rgba(201, 162, 75, 0.3);
+  border-radius: 0.6rem;
+  color: #f5efe3;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.field:focus {
+  border-color: var(--gold);
+}
+.field::placeholder {
+  color: #8a8172;
+}
+select.field option {
+  background: #171310;
+  color: #f5efe3;
+}
+input[type="date"].field::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(0.4) saturate(3);
+}
+
+/* ---------- film card play button ---------- */
+.play-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: rgba(201, 162, 75, 0.95);
+  color: #0b0a08;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+.group:hover .play-btn {
+  transform: scale(1.1);
+  background: #e6c87a;
+}
+
+/* film grid video */
+.film-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+  display: block;
+}
+
+/* nav link underline */
+.nav-link {
+  position: relative;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #d8d0bf;
+  transition: color 0.3s;
+  padding-bottom: 4px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.35s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-light);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* thin gold divider with diamond */
+.divider-orn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--gold);
+}
+.divider-orn::before,
+.divider-orn::after {
+  content: "";
+  height: 1px;
+  width: 64px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.divider-orn::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
